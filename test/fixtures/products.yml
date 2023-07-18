@@ -2,22 +2,20 @@
 
 one:
   name: MyString
-  price: 9.99
-  description: MyString
-  category: 1
-  border: 1
-  flavor1: 1
-  flavor2: 1
-  notes: MyText
-  size: 1
+  price: 1
+  description: MyText
+  category_id: 1
+  border_id: 1
+  flavour1_id: 1
+  flavour2_id: 1
+  size: MyString
 
 two:
   name: MyString
-  price: 9.99
-  description: MyString
-  category: 1
-  border: 1
-  flavor1: 1
-  flavor2: 1
-  notes: MyText
-  size: 1
+  price: 1
+  description: MyText
+  category_id: 1
+  border_id: 1
+  flavour1_id: 1
+  flavour2_id: 1
+  size: MyString
