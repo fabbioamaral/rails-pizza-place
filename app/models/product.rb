@@ -7,13 +7,11 @@ class Product < ApplicationRecord
     has_one :category
     validates :category, presence: true
 
-    has_one :pizzaborder
-    validates :pizzaborder, presence: false, allow_blank: true
+    has_one :pizza_border
+    validates :pizzaborder, allow_blank: true
 
-    has_one :flavour1
-    validates :flavour1, presence: false, allow_blank: true
+    validates :flavour1, allow_blank: true
 
-    has_one :flavour2
-    validates :flavour2, presence: false, allow_blank: true
+    validates :flavour2, allow_blank: true
 
 end
