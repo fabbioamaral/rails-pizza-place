@@ -7,7 +7,7 @@ module Api
             flavour_categories = CategoryFlavour.all
 
             if flavour_categories
-                render json: { status: "SUCCESS", message: "Fetched all product categories successfully!", data: flavour_categories }, status: :ok
+                render json: { status: "SUCCESS", message: "Fetched all flavour categories successfully!", data: flavour_categories }, status: :ok
             else
                 render json: flavour_categories.errors, status: :bad_request
             end
@@ -27,7 +27,7 @@ module Api
 
         # POST
         def create
-            flavour_category = CategoryFlavour.new(category_params)
+            flavour_category = CategoryFlavour.new(flavour_category_params)
 
             if flavour_category.save
                 render json: { status: "SUCCESS", message: "Flavour Category was created successfully!", data: flavour_category  }, status: :created

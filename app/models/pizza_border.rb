@@ -4,4 +4,11 @@ class PizzaBorder < ApplicationRecord
     validates :size, presence: true
 
     has_many :products
+
+    enum size: {
+        small: 'small',
+        regular: 'regular',
+        large: 'large',
+        extra_large: 'extra_large'
+    }
 end

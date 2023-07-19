@@ -7,7 +7,7 @@ module Api
             flavours = Flavour.all
 
             if flavours
-                render json: { status: "SUCCESS", message: "Fetched all pizza borders successfully!", data: flavours }, status: :ok
+                render json: { status: "SUCCESS", message: "Fetched all flavours successfully!", data: flavours }, status: :ok
             else
                 render json: flavours.errors, status: :bad_request
             end
