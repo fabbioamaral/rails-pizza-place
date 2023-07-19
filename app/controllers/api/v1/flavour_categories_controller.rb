@@ -4,7 +4,7 @@ module Api
 
         # GET ALL
         def index
-            flavour_categories = FlavourCategory.all
+            flavour_categories = CategoryFlavour.all
 
             if flavour_categories
                 render json: { status: "SUCCESS", message: "Fetched all product categories successfully!", data: flavour_categories }, status: :ok
@@ -15,7 +15,7 @@ module Api
 
         # GET BY ID
         def show
-            flavour_category = FlavourCategory.find(params[:id])
+            flavour_category = CategoryFlavour.find(params[:id])
 
             if flavour_category
                 render json: { data: flavour_category }, state: :ok
@@ -27,7 +27,7 @@ module Api
 
         # POST
         def create
-            flavour_category = FlavourCategory.new(category_params)
+            flavour_category = CategoryFlavour.new(category_params)
 
             if flavour_category.save
                 render json: { status: "SUCCESS", message: "Flavour Category was created successfully!", data: flavour_category  }, status: :created
@@ -38,7 +38,7 @@ module Api
 
         # DELETE
         def destroy
-            flavour_category = FlavourCategory.find(params[:id])
+            flavour_category = CategoryFlavour.find(params[:id])
 
             if flavour_category.destroy!
                 render json: {message: "Flavour Category was deleted successfully!"}, status: :ok
@@ -49,7 +49,7 @@ module Api
 
         # UPDATE
         def update
-            flavour_category = FlavourCategory.find(params[:id])
+            flavour_category = CategoryFlavour.find(params[:id])
 
             if flavour_category.update!(flavour_category_params)
                 render json: { message: "Flavour Category was updated successfully!", data: flavour_category }, status: :ok
