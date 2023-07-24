@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # api/v1/... 
   namespace :api do
     namespace :v1 do
-      resources :categories, :products, :pizza_borders, :flavour_categories, :flavours, :orders
+      resources :categories, :products, :pizza_borders, :flavour_categories, :flavours, :orders, :addresses
     end
   end
 
