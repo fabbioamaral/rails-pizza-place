@@ -15,7 +15,7 @@ class Product < ApplicationRecord
 
     # orders-products is a many-to-many relationship
     has_many :order_products
-    has_many :orders, :through => :order_products
+    has_many :orders, through: :order_products
     
     enum size: {
         small: 'small',
@@ -25,3 +25,4 @@ class Product < ApplicationRecord
     }
 
 end
+
