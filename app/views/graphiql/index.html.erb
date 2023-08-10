@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Simple GraphiQL</title>
+    <link href="https://unpkg.com/graphiql/graphiql.min.css" rel="stylesheet" />
+     <link
+      rel="stylesheet"
+      href="https://unpkg.com/@graphiql/plugin-explorer/dist/style.css"
+    />
+    <%= csrf_meta_tags %>
+  </head>
+  <body style="margin: 0;">
+    <div id="graphiql" style="height: 100vh;"></div>
+
+    <script crossorigin src="https://unpkg.com/react/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/graphiql/graphiql.min.js"></script>
+    <script crossorigin src="https://unpkg.com/@graphiql/plugin-explorer@1.0.0/dist/index.umd.js"></script>
+
+    <script>
+      const graphqlEndpointUrl = "<%= graphql_url %>";
+      const graphQLFetcher = graphQLParams =>
+        fetch(graphqlEndpointUrl, {
+          method: 'post',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': document.querySelector(`meta[name="csrf-token"]`).content
+          },
+          body: JSON.stringify(graphQLParams),
+        })
+          .then(response => response.json())
+          .catch(() => response.text());
+
+      var explorerPlugin = GraphiQLPluginExplorer.explorerPlugin();
+
+      function GraphiQLWithExplorer() {
+        return React.createElement(GraphiQL, {
+          fetcher: graphQLFetcher,
+          defaultEditorToolsVisibility: true,
+          plugins: [explorerPlugin]
+        });
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById('graphiql'));
+      root.render(React.createElement(GraphiQLWithExplorer));
+    </script>
+  </body>
+</html>
