@@ -1,6 +1,7 @@
-module 
+module Types
     class OrderType < BaseObject
         field :id, ID, null: false
+        field :products, [Types::ProductType], null: false
         field :subtotal, Int, null: false
         field :discount, Int, null: true
         field :delivery_fee, Int, null: true
