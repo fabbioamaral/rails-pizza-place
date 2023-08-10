@@ -14,5 +14,8 @@ module Types
     # ORDERS
     field :client_orders, [Types::OrderType], resolver: Resolvers::OrdersResolver
 
+    # PRODUCTS
+    field :category_products, [Types::ProductType], resolver: Resolvers::ProductsResolver
+
   end
 end
