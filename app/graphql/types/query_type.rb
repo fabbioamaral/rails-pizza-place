@@ -1,6 +1,6 @@
 
 module Types
-  require './../pizza_place/app/graphql/resolvers/orders_resolver'
+  #require './../pizza_place/app/graphql/resolvers/orders_resolver'
   class QueryType < Types::BaseObject
     description "The query root of this schema"
 
