@@ -1,6 +1,6 @@
 
-module Resolvers
-    class ProductsResolver < GraphQL::Schema::Resolver
+module Queries
+    class ProductsQuery < GraphQL::Schema::Resolver
       type [Types::ProductType], null: false
   
       argument :category_id, ID, required: true

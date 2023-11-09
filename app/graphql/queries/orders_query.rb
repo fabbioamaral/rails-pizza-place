@@ -1,6 +1,6 @@
 
-module Resolvers
-  class OrdersResolver < GraphQL::Schema::Resolver
+module Queries
+  class OrdersQuery < GraphQL::Schema::Resolver
     type [Types::OrderType], null: false
 
     argument :client_id, ID, required: true
