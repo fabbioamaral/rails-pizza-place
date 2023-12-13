@@ -23,6 +23,5 @@ class Product < ApplicationRecord
         large: 'large',
         extra_large: 'extra_large'
     }
-
 end
 
