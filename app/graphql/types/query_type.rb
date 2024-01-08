@@ -17,5 +17,8 @@ module Types
     # PRODUCTS
     field :category_products, [Types::ProductType], resolver: Queries::ProductsQuery
 
+    # CATEGORIES
+    field :categories, [Types::CategoryType], resolver: Queries::CategoriesQuery
+
   end
 end
