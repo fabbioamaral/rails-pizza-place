@@ -5,10 +5,5 @@ class PizzaBorder < ApplicationRecord
 
     has_many :products
 
-    enum size: {
-        small: 'small',
-        regular: 'regular',
-        large: 'large',
-        extra_large: 'extra_large'
-    }
+    enum size: [:small, :large, :extra_large]
 end
