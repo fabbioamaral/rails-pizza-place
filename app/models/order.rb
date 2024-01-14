@@ -1,8 +1,8 @@
 class Order < ApplicationRecord
     # validates :products , presence: true
-    validates :subtotal, numericality: { only_integer: true, greater_than_or_equal_to: 0 }, presence: true
-    validates :delivery_fee, presence: false # in case order type is 'in person' there is no delivery fee associated with the order
-    validates :discount, presence: false # discounts are totally optional
+    validates :subtotal, numericality: { greater_than_or_equal_to: 0 }, presence: true
+    validates :delivery_fee, numericality: { greater_than_or_equal_to: 0 }, presence: false # in case order type is 'in person' there is no delivery fee associated with the order
+    validates :discount, numericality: { greater_than_or_equal_to: 0 }, presence: false # discounts are totally optional
     validates :total_price, numericality: { only_integer: true, greater_than_or_equal_to: 0 }, presence: true
     validates :payment_method, presence: true
     validates :order_type, presence: true
