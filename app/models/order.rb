@@ -14,4 +14,5 @@ class Order < ApplicationRecord
     has_many :order_products
     has_many :products, through: :order_products
 
+    enum order_type: [:in_person, :delivery]
 end
