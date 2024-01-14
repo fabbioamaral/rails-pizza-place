@@ -14,5 +14,6 @@ class Order < ApplicationRecord
     has_many :order_products
     has_many :products, through: :order_products
 
-    enum order_type: [:in_person, :delivery]
+    enum type: [:in_person, :delivery]
+    enum payment_method: [:credit_card, :debit_card, :cash, :other]
 end
