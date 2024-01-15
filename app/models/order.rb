@@ -1,4 +1,7 @@
 class Order < ApplicationRecord
+
+    validates_with OrderStatusValidator
+    
     # validates :products , presence: true
     validates :subtotal, numericality: { greater_than_or_equal_to: 0 }, presence: true
     validates :delivery_fee, numericality: { greater_than_or_equal_to: 0 }, presence: false # in case order type is 'in person' there is no delivery fee associated with the order
