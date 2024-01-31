@@ -1,6 +1,7 @@
 class Order < ApplicationRecord
-    validates_with OrderStatusValidator
-    validates_with OrderDiscountValidator
+    validates_with Orders::OrderStatusValidator
+    validates_with Orders::OrderDiscountValidator
+    validates_with Orders::OrderSubtotalValidator
     
     # validates :products , presence: true
     validates :subtotal, numericality: { greater_than_or_equal_to: 0 }, presence: true
