@@ -1,5 +1,4 @@
 class Order < ApplicationRecord
-
     validates_with OrderStatusValidator
     
     # validates :products , presence: true
