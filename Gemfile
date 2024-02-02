@@ -35,6 +35,7 @@ group :development, :test do
   gem 'rspec-rails', ">= 3.9.0"
   # Shoulda Matchers provides RSpec- and Minitest-compatible one-liners to test common Rails functionality that, if written by hand, would be much longer, more complex, and error-prone.
   gem 'shoulda-matchers'
+  gem 'factory_bot_rails', '~> 6.1'
 end
 
 group :development do
@@ -52,5 +53,3 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "graphql", "~> 2.0"
-
-gem "factory_bot", "~> 6.4"
