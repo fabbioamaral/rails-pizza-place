@@ -7,10 +7,10 @@ module Categories
         end
 
         def process
-            product = Category.create(
+            category = Category.create(
                 name: @name
             )
-            { :status => true, :id => product.id }
+            { :status => true, :id => category.id }
             rescue StandardError
                 false
         end
