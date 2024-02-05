@@ -6,15 +6,14 @@ module Mutations
             argument :add_products_attributes, Types::Products::AddProductAttributesType, required: true, description: "object containing all properties needed to create a product"
                
             field :status, Boolean, null: false, description: "Returns status of create product"
+            field :id, ID, null: false, description: "Returns id of newly created product"
 
             def resolve(add_products_attributes:)
                 @add_products_attributes = add_products_attributes
 
-                status = ::Products::CreationService.new(
+                result = ::Products::CreationService.new(
                     add_products_attributes: @add_products_attributes
                 ).process
-
-                { status: status }
             end
 
         end

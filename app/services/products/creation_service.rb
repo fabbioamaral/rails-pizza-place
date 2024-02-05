@@ -14,7 +14,7 @@ module Products
         end
 
         def process
-            Product.create(
+            product = Product.create(
                 name: @name,
                 price: @price,
                 description: @description,
@@ -24,7 +24,7 @@ module Products
                 pizza_border_id: @pizza_border_id,
                 size: @size
             )
-            true
+            { :status => true, :id => product.id}
             rescue StandardError
                 false
         end
