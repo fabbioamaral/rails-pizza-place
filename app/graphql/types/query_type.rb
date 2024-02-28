@@ -15,7 +15,7 @@ module Types
     field :client_orders, [Types::OrderType], resolver: Queries::OrdersQuery
 
     # PRODUCTS
-    field :category_products, [Types::ProductType], resolver: Queries::ProductsQuery
+    field :products, [Types::ProductType], resolver: Queries::ProductsQuery
 
     # CATEGORIES
     field :categories, [Types::CategoryType], resolver: Queries::CategoriesQuery
