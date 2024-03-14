@@ -20,5 +20,8 @@ module Types
     # CATEGORIES
     field :categories, [Types::CategoryType], resolver: Queries::CategoriesQuery
 
+    # ADDRESSES
+    field :addresses, [Types::Addresses::AddressType], resolver: Queries::AddressesQuery
+
   end
 end
