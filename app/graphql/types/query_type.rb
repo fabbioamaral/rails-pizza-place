@@ -12,13 +12,13 @@ module Types
     # They will be entry points for queries on your schema.
 
     # ORDERS
-    field :client_orders, [Types::OrderType], resolver: Queries::OrdersQuery
+    field :client_orders, [Types::Orders::OrderType], resolver: Queries::OrdersQuery
 
     # PRODUCTS
-    field :products, [Types::ProductType], resolver: Queries::ProductsQuery
+    field :products, [Types::Products::ProductType], resolver: Queries::ProductsQuery
 
     # CATEGORIES
-    field :categories, [Types::CategoryType], resolver: Queries::CategoriesQuery
+    field :categories, [Types::Categories::CategoryType], resolver: Queries::CategoriesQuery
 
     # ADDRESSES
     field :addresses, [Types::Addresses::AddressType], resolver: Queries::AddressesQuery
