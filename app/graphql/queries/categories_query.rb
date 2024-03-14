@@ -1,7 +1,7 @@
 
 module Queries
   class CategoriesQuery < GraphQL::Schema::Resolver
-    type [Types::CategoryType], null: false
+    type [Types::Categories::CategoryType], null: false
 
     def resolve
       Category.all

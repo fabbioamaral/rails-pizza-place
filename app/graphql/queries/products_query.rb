@@ -1,7 +1,7 @@
 
 module Queries
     class ProductsQuery < GraphQL::Schema::Resolver
-      type [Types::ProductType], null: false
+      type [Types::Products::ProductType], null: false
   
       def resolve
         Product.all
