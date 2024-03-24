@@ -5,6 +5,7 @@ module Types
             argument :number, String, null: false
             argument :suburb_id, ID, null: false
             argument :client_id, ID, null: false
+            argument :default, Boolean, null: false
         end
     end
 end
