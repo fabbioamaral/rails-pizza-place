@@ -6,8 +6,13 @@ module Types
     field :delete_product, mutation: Mutations::Products::DeleteProduct
 
     # CATEGORIES
-    field :create_Category, mutation: Mutations::Categories::CreateCategory
-    field :update_Category, mutation: Mutations::Categories::UpdateCategory
-    field :delete_Category, mutation: Mutations::Categories::DeleteCategory
+    field :create_category, mutation: Mutations::Categories::CreateCategory
+    field :update_category, mutation: Mutations::Categories::UpdateCategory
+    field :delete_category, mutation: Mutations::Categories::DeleteCategory
+
+    # ADDRESSES
+    field :create_address, mutation: Mutations::Addresses::CreateAddress
+    field :update_address, mutation: Mutations::Addresses::UpdateAddress
+    field :delete_address, mutation: Mutations::Addresses::DeleteAddress
   end
 end
