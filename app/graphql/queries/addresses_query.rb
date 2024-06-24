@@ -1,7 +1,7 @@
 
 module Queries
   class AddressesQuery < GraphQL::Schema::Resolver
-    type [Types::Categories::AddressType], null: false
+    type [Types::Addresses::AddressType], null: false
 
     argument :client_id, ID, required: true
 

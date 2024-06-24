@@ -1,7 +1,7 @@
 module Mutations
     module Addresses
         class CreateAddress < Mutations::BaseMutation
-            description "Creates a product"
+            description "Creates an address"
 
             argument :add_addresses_attributes, Types::Addresses::AddAddressAttributesType, required: true, description: "object containing all properties needed to create an address"
                

@@ -1,7 +1,7 @@
 module Mutations
     module Addresses
         class UpdateAddress < Mutations::BaseMutation
-            description "Updates a product"
+            description "Updates an address"
 
             argument :update_address_attributes, Types::Addresses::UpdateAddressAttributesType, required: true, description: "object containing all properties needed to create an address"
                
