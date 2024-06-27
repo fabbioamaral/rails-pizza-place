@@ -21,7 +21,8 @@ class Product < ApplicationRecord
         small: 'small',
         regular: 'regular',
         large: 'large',
-        extra_large: 'extra_large'
+        extra_large: 'extra_large',
+        not_applicable: 'not_applicable'
     }
 end
 
