@@ -1,6 +1,8 @@
 module Types
-    class CategoryType < BaseObject
-        field :id, ID, null: false
-        field :name, String, null: false
+    module Categories
+        class CategoryType < BaseObject
+            field :id, ID, null: false
+            field :name, String, null: false
+        end
     end
 end
