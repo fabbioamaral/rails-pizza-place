@@ -10,6 +10,7 @@ module Addresses
             @suburb_id = update_address_attributes.suburb_id || @address.suburb_id
             @client_id = update_address_attributes.client_id || @address.client_id
             @default = add_address_attributes.default || @address.default
+            @city = add_address_attributes.city || @address.city
         end
 
         def process
@@ -18,7 +19,8 @@ module Addresses
                 number: @number,
                 suburb_id: @suburb_id,
                 client_id: @client_id,
-                default: @default
+                default: @default,
+                city: @city
             )
             true
             rescue StandardError

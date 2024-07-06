@@ -5,6 +5,8 @@ module Types
             field :street, String, null: false
             field :number, String, null: false
             field :suburb_id, ID, null: false
+            field :city, String, null: false
+            field :additional_info, String, null: false
             field :client_id, ID, null: false
             field :default, Boolean, null: false
         end
