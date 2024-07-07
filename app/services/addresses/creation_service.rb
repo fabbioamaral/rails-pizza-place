@@ -12,6 +12,8 @@ module Addresses
         end
 
         def process
+            check_existing_default_address if @default
+            
             address = Address.create(
                 street: @street,
                 number: @number,
@@ -21,9 +23,16 @@ module Addresses
                 city: @city
 
             )
-            { :status => true, :id => address.id}
-            rescue StandardError
-                false
+                { :status => true, :id => address.id}
+                rescue StandardError
+                    false
         end
+
+        def check_existing_default_address
+            client_addresses = Address.where(client_id: @client_id)
+            index = client_addresses.find_index { |address| address.default == true }
+            client_addresses[index].update(default: false) if index
+        end
+
     end
 end
