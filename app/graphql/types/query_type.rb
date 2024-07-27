@@ -23,5 +23,8 @@ module Types
     # ADDRESSES
     field :addresses, [Types::Addresses::AddressType], resolver: Queries::AddressesQuery
 
+    # PIZZA CRUSTS
+    field :pizza_crusts, [Types::Pizzas::Crusts::CrustType], resolver: Queries::CrustsQuery
+
   end
 end
