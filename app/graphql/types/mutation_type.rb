@@ -17,7 +17,7 @@ module Types
 
     # PIZZA CRUSTS
     field :create_crust, mutation: Mutations::Pizzas::Crusts::CreateCrust
-    # field :update_crust, mutation: Mutations::Pizzas::Crusts::UpdateCrust
+    field :update_crust, mutation: Mutations::Pizzas::Crusts::UpdateCrust
     # field :delete_crust, mutation: Mutations::Pizzas::Crusts::DeleteCrust
   end
 end
