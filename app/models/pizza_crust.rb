@@ -5,5 +5,11 @@ class PizzaCrust < ApplicationRecord
 
     has_many :products
 
-    enum size: [:small, :large, :extra_large]
+    enum size: {
+        small: 'small',
+        regular: 'regular',
+        large: 'large',
+        extra_large: 'extra_large',
+        not_applicable: 'not_applicable'
+    }
 end

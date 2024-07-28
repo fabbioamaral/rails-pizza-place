@@ -14,5 +14,10 @@ module Types
     field :create_address, mutation: Mutations::Addresses::CreateAddress
     field :update_address, mutation: Mutations::Addresses::UpdateAddress
     field :delete_address, mutation: Mutations::Addresses::DeleteAddress
+
+    # PIZZA CRUSTS
+    field :create_crust, mutation: Mutations::Pizzas::Crusts::CreateCrust
+    # field :update_crust, mutation: Mutations::Pizzas::Crusts::UpdateCrust
+    # field :delete_crust, mutation: Mutations::Pizzas::Crusts::DeleteCrust
   end
 end
