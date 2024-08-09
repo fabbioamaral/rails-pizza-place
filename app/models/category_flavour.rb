@@ -11,4 +11,9 @@ class CategoryFlavour < ApplicationRecord
         large: 'large',
         extra_large: 'extra_large'
     }
+
+    scope :small, -> { where size: 'small' }
+    scope :regular, -> { where size: 'regular' }
+    scope :large, -> { where size: 'large' }
+    scope :extra_large, -> { where size: 'extra_large' }
 end
