@@ -26,5 +26,8 @@ module Types
     # PIZZA CRUSTS
     field :pizza_crusts, [Types::Pizzas::Crusts::CrustType], resolver: Queries::CrustsQuery
 
+    # PIZZA FLAVOURS
+    field :pizza_flavours, [Types::Pizzas::Flavours::FlavourType], resolver: Queries::FlavoursQuery
+
   end
 end
