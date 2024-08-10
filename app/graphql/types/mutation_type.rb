@@ -19,5 +19,10 @@ module Types
     field :create_crust, mutation: Mutations::Pizzas::Crusts::CreateCrust
     field :update_crust, mutation: Mutations::Pizzas::Crusts::UpdateCrust
     field :delete_crust, mutation: Mutations::Pizzas::Crusts::DeleteCrust
+    
+    # PIZZA FLAVOURS
+    field :create_flavour, mutation: Mutations::Pizzas::Flavours::CreateFlavour
+    # field :update_flavour, mutation: Mutations::Pizzas::Flavours::UpdateFlavour
+    # field :delete_flavour, mutation: Mutations::Pizzas::Flavours::DeleteFlavour
   end
 end
