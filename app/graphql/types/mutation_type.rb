@@ -23,6 +23,6 @@ module Types
     # PIZZA FLAVOURS
     field :create_flavour, mutation: Mutations::Pizzas::Flavours::CreateFlavour
     field :update_flavour, mutation: Mutations::Pizzas::Flavours::UpdateFlavour
-    # field :delete_flavour, mutation: Mutations::Pizzas::Flavours::DeleteFlavour
+    field :delete_flavour, mutation: Mutations::Pizzas::Flavours::DeleteFlavour
   end
 end
