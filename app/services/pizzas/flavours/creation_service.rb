@@ -9,7 +9,6 @@ module Pizzas
             end
 
             def process
-                binding.pry
                 flavour = Flavour.create(
                     name: @name,
                     category_flavour_id: @category_flavour_id,
