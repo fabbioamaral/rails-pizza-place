@@ -29,5 +29,8 @@ module Types
     # PIZZA FLAVOURS
     field :pizza_flavours, [Types::Pizzas::Flavours::FlavourType], resolver: Queries::FlavoursQuery
 
+    # PAYMENT METHODS
+    field :payment_methods, [Types::PaymentMethods::PaymentMethodType], resolver: Queries::PaymentMethodsQuery
+
   end
 end

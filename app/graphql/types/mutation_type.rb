@@ -24,5 +24,10 @@ module Types
     field :create_flavour, mutation: Mutations::Pizzas::Flavours::CreateFlavour
     field :update_flavour, mutation: Mutations::Pizzas::Flavours::UpdateFlavour
     field :delete_flavour, mutation: Mutations::Pizzas::Flavours::DeleteFlavour
+
+    # PAYMENT METHODS
+    field :create_payment_method, mutation: Mutations::PaymentMethods::CreatePaymentMethod
+    field :update_payment_method, mutation: Mutations::PaymentMethods::UpdatePaymentMethod
+    field :delete_payment_method, mutation: Mutations::PaymentMethods::DeletePaymentMethod
   end
 end
