@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Product, :type => :model do
-    let(:product) { create(:product) }
+    subject(:product) { create(:product) }
+    let(:category_pizza) { create(:category_pizza) }
+    let(:category_other_product) { create(:category) }
 
     # describe "pizza validation" do
     #     it "is not valid without a pizza_border"
@@ -48,6 +50,29 @@ RSpec.describe Product, :type => :model do
           product.flavour1_id = nil
           product.flavour1_id = nil
           expect(product).to be_valid
+        end
+      end
+    end
+
+    describe "checks method pizza?" do
+      context "when product is a pizza" do
+        it "should return true" do
+          allow(Category).to receive(:find).with(product.category_id).and_return(category_pizza)
+          expect(product.pizza?).to be(true)
+        end
+      end
+
+      context "when product is not a pizza" do
+        it "should return false" do
+          allow(Category).to receive(:find).with(product.category_id).and_return(category_other_product)
+          expect(product.pizza?).to be(false)
+        end
+      end
+
+      context "when product category is not valid" do
+        it "should return false" do
+          allow(Category).to receive(:find).with(product.category_id).and_return(nil)
+          expect(product.pizza?).to be(false)
         end
       end
     end
