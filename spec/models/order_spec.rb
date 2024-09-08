@@ -1,5 +1,3 @@
-# spec/models/auction_spec.rb
-
 require 'rails_helper'
 
 RSpec.describe Order, :type => :model do
