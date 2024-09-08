@@ -11,6 +11,8 @@ class Product < ApplicationRecord
     has_one :pizza_border
     validates :pizza_border_id, presence: false
 
+    validates_with PizzaValidator
+
     # orders-products is a many-to-many relationship
     has_many :order_products
     has_many :orders, through: :order_products
