@@ -4,6 +4,8 @@ FactoryBot.define do
       price { 80 }
       description { 'this the the description of product 1' }
       category_id { 1 }
-      size { :not_applicable }
+      pizza_border_id { 1 }
+      flavour1_id { 1 }
+      size { :large }
     end
 end

@@ -2,16 +2,36 @@ require 'rails_helper'
 
 RSpec.describe Product, :type => :model do
     subject(:product) { create(:product) }
+    let(:pizza) { create(:pizza) }
     let(:category_pizza) { create(:category_pizza) }
     let(:category_other_product) { create(:category) }
 
-    # describe "pizza validation" do
-    #     it "is not valid without a pizza_border"
-    #     # it "is only valid with flavour1 and flavour2"
-    #     # it "is valid only with sizes small, regular, large and extra_large"
-    #   end
+    describe "a pizza" do
+      before do
+        allow(Category).to receive(:find).with(pizza.category_id).and_return(category_pizza)
+      end
+
+      it "is not valid without a pizza_border" do
+        pizza.pizza_border_id = nil
+
+        expect(pizza).not_to be_valid
+      end
+
+      it "is not valid without flavour1" do
+        pizza.flavour1_id = nil
+
+        expect(pizza).not_to be_valid
+      end
+
+      it "is not valid without size" do
+        pizza.size = nil
+
+        expect(pizza).not_to be_valid
+      end
+        # it "is valid only with sizes small, regular, large and extra_large"
+    end
     
-    describe "other products validation" do
+    describe "a product other than pizza" do
       context "when there's no missing or invalid attributes" do
         it "is valid" do
           expect(product).to be_valid
@@ -49,6 +69,11 @@ RSpec.describe Product, :type => :model do
         it "is valid without pizza flavours", :aggregate_failures do
           product.flavour1_id = nil
           product.flavour1_id = nil
+          expect(product).to be_valid
+        end
+
+        it "is valid without size", :aggregate_failures do
+          product.size = nil
           expect(product).to be_valid
         end
       end
