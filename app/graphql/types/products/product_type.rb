@@ -6,7 +6,7 @@ module Types
             field :price, Int, null: false
             field :description, String, null: true
             field :category_id, ID, null: false
-            field :pizza_border_id, ID, null: true
+            field :pizza_crust_id, ID, null: true
             field :flavour1_id, ID, null: true
             field :flavour2_id, ID, null: true
             field :size, String, null: false

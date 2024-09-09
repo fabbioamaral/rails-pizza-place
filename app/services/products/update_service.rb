@@ -12,7 +12,7 @@ module Products
             @flavour1_id = update_products_attributes.flavour1_id || @product.flavour1_id 
             @flavour2_id = update_products_attributes.flavour2_id || @product.flavour2_id
             @category_id = update_products_attributes.category_id || @product.category_id
-            @pizza_border_id = update_products_attributes.pizza_border_id || @product.pizza_border_id
+            @pizza_crust_id = update_products_attributes.pizza_crust_id || @product.pizza_crust_id
             @size = update_products_attributes.size || @product.size
         end
 
@@ -24,7 +24,7 @@ module Products
                 flavour1_id: @flavour1_id,
                 flavour2_id: @flavour2_id,
                 category_id: @category_id,
-                pizza_border_id: @pizza_border_id,
+                pizza_crust_id: @pizza_crust_id,
                 size: @size
             )
             true
