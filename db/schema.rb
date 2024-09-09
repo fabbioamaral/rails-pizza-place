@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_08_24_095933) do
+ActiveRecord::Schema.define(version: 2024_09_09_223127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,7 +100,7 @@ ActiveRecord::Schema.define(version: 2024_08_24_095933) do
     t.string "size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "pizza_border_id"
+    t.integer "pizza_crust_id"
   end
 
   create_table "suburbs", force: :cascade do |t|
