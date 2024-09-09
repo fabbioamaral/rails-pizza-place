@@ -3,32 +3,22 @@ require 'rails_helper'
 RSpec.describe Product, :type => :model do
     subject(:product) { create(:product) }
     let(:pizza) { create(:pizza) }
-    let(:category_pizza) { create(:category_pizza) }
-    let(:category_other_product) { create(:category) }
 
     describe "a pizza" do
-      before do
-        allow(Category).to receive(:find).with(pizza.category_id).and_return(category_pizza)
-      end
-
-      it "is not valid without a pizza_border" do
-        pizza.pizza_border_id = nil
-
+      it "is not valid without a pizza_crust" do
+        pizza.pizza_crust_id = nil
         expect(pizza).not_to be_valid
       end
 
       it "is not valid without flavour1" do
         pizza.flavour1_id = nil
-
         expect(pizza).not_to be_valid
       end
 
       it "is not valid without size" do
         pizza.size = nil
-
         expect(pizza).not_to be_valid
       end
-        # it "is valid only with sizes small, regular, large and extra_large"
     end
     
     describe "a product other than pizza" do
@@ -61,8 +51,8 @@ RSpec.describe Product, :type => :model do
           expect(product).to be_valid
         end
 
-        it "is valid without a pizza border" do
-          product.pizza_border_id = nil
+        it "is valid without a pizza crust" do
+          product.pizza_crust_id = nil
           expect(product).to be_valid
         end
 
@@ -82,14 +72,12 @@ RSpec.describe Product, :type => :model do
     describe "checks method pizza?" do
       context "when product is a pizza" do
         it "should return true" do
-          allow(Category).to receive(:find).with(product.category_id).and_return(category_pizza)
-          expect(product.pizza?).to be(true)
+          expect(pizza.pizza?).to be(true)
         end
       end
 
       context "when product is not a pizza" do
         it "should return false" do
-          allow(Category).to receive(:find).with(product.category_id).and_return(category_other_product)
           expect(product.pizza?).to be(false)
         end
       end
@@ -100,6 +88,12 @@ RSpec.describe Product, :type => :model do
           expect(product.pizza?).to be(false)
         end
       end
+    end
+
+    describe "associations" do
+      it { is_expected.to belong_to(:category) }
+      it { is_expected.to belong_to(:pizza_crust).optional(true) }
+      it { is_expected.to have_many(:order_products) }
     end
 end
 

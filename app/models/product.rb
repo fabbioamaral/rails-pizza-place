@@ -5,11 +5,10 @@ class Product < ApplicationRecord
     validates :flavour1_id, presence: false
     validates :flavour2_id, presence: false
 
-    has_one :category
+    belongs_to :category
     validates :category_id, presence: true
 
-    has_one :pizza_border
-    validates :pizza_border_id, presence: false
+    belongs_to :pizza_crust, optional: true
 
     validates_with PizzaValidator
 
