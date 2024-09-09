@@ -8,8 +8,8 @@ class PizzaValidator < ActiveModel::Validator
     end
     
     def validate_pizza_crust(record)
-        return if record.pizza_border_id.present?
-        record.errors.add(:pizza_border_id, "Missing pizza crust")
+        return if record.pizza_crust_id.present?
+        record.errors.add(:pizza_crust_id, "Missing pizza crust")
     end
 
     def validate_pizza_flavour(record)
