@@ -11,17 +11,17 @@ RSpec.describe PizzaValidator do
     describe "crust" do
         context "when pizza does not have a crust", :aggregate_failures do
             it "generates an error" do
-                record.pizza_border_id = nil
+                record.pizza_crust_id = nil
                 record.valid?
     
-                expect(record.errors[:pizza_border_id]).to include(/Missing pizza crust/)
+                expect(record.errors[:pizza_crust_id]).to include(/Missing pizza crust/)
                 expect(record).not_to be_valid
             end
         end
     
         context "when pizza has a crust", :aggregate_failures do
             it "does not generate an error" do
-                expect(record.errors[:pizza_border_id]).not_to include(/Missing pizza crust/)
+                expect(record.errors[:pizza_crust_id]).not_to include(/Missing pizza crust/)
                 expect(record).to be_valid
             end
         end
