@@ -2,9 +2,9 @@ class Address < ApplicationRecord
     validates :street, presence: true
     validates :number, presence: true
 
-    has_one :suburb
+    belongs_to :suburb
     validates :suburb_id, presence: true
 
-    has_one :client
+    belongs_to :client
     validates :client_id, presence: true
 end
