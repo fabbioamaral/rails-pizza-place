@@ -10,6 +10,11 @@ module Types
     field :update_category, mutation: Mutations::Categories::UpdateCategory
     field :delete_category, mutation: Mutations::Categories::DeleteCategory
 
+    # CLIENTS
+    field :create_client, mutation: Mutations::Clients::CreateClient
+    # field :update_client, mutation: Mutations::Clients::UpdateClient
+    # field :delete_client, mutation: Mutations::Clients::DeleteClient
+
     # ADDRESSES
     field :create_address, mutation: Mutations::Addresses::CreateAddress
     field :update_address, mutation: Mutations::Addresses::UpdateAddress
