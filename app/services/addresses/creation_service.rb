@@ -14,7 +14,7 @@ module Addresses
         def process
             check_existing_default_address if @default
             
-            address = Address.create(
+            address = Address.create!(
                 street: @street,
                 number: @number,
                 suburb_id: @suburb_id,
