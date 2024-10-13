@@ -19,8 +19,6 @@ module Clients
                 
                 create_address
                 { :status => true }
-            rescue StandardError => e
-                { :status => false, :error => "Error message: #{e.message}" }
             end
             
             private 
