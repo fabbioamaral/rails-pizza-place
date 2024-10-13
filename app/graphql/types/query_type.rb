@@ -1,6 +1,4 @@
-
 module Types
-  #require './../pizza_place/app/graphql/resolvers/orders_resolver'
   class QueryType < Types::BaseObject
     description "The query root of this schema"
 
@@ -10,6 +8,9 @@ module Types
 
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
+
+    # CLIENTS
+    field :clients, [Types::Clients::ClientType], resolver: Queries::ClientsQuery
 
     # ORDERS
     field :client_orders, [Types::Orders::OrderType], resolver: Queries::OrdersQuery
@@ -31,6 +32,5 @@ module Types
 
     # PAYMENT METHODS
     field :payment_methods, [Types::PaymentMethods::PaymentMethodType], resolver: Queries::PaymentMethodsQuery
-
   end
 end
