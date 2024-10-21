@@ -13,7 +13,7 @@ module Types
     # CLIENTS
     field :create_client, mutation: Mutations::Clients::CreateClient
     # field :update_client, mutation: Mutations::Clients::UpdateClient
-    # field :delete_client, mutation: Mutations::Clients::DeleteClient
+    field :delete_client, mutation: Mutations::Clients::DeleteClient
 
     # ADDRESSES
     field :create_address, mutation: Mutations::Addresses::CreateAddress
