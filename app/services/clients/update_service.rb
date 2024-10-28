@@ -7,7 +7,6 @@ module Clients
         
             @name = update_client_attributes.name || @client.name
             @phone = update_client_attributes.phone || @client.phone
-            @address = update_client_attributes.address || @client.address
             @notes = update_client_attributes.notes || @client.notes 
 
         end
@@ -16,7 +15,6 @@ module Clients
             @client.update!(
                 name: @name,
                 phone: @phone,
-                address: @address,
                 notes: @notes,
             )
             true
