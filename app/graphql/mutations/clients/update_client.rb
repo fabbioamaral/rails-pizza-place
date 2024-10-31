@@ -10,9 +10,11 @@ module Mutations
             def resolve(update_client_attributes:)
                 @update_client_attributes = update_client_attributes
 
-                result = ::Clients::UpdateService.new(
+                status = ::Clients::UpdateService.new(
                     update_client_attributes: @update_client_attributes
                 ).process
+
+                { status: status }
             end
 
         end
