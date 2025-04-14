@@ -1,0 +1,30 @@
+services: # List of "containers" (services) to run
+  db: # Name of the database service (PostgreSQL)
+    image: postgres:14 # Use the official Postgres 14 image from Docker Hub
+    volumes:
+      - db-data:/var/lib/postgresql/data # Persist database data even after container stops
+    environment: # Environment variables to configure Postgres
+      POSTGRES_USER: postgres # Default username
+      POSTGRES_PASSWORD: password # Password for the user
+      POSTGRES_DB: pizza_place_development # Name of the default DB to create
+
+  web: # Name of the Rails app service
+    build: . # Build the Dockerfile in the current directory (your app)
+    command:
+      bash -c "rm -f tmp/pids/server.pid && bundle exec rails server -b 0.0.0.0 -p 3000"
+      # Removes old PID file (fixes a common Rails boot error), then starts the Rails server
+    volumes:
+      - .:/app # Mount the current directory into the container at /app (live code reload)
+    ports:
+      - '3000:3000' # Map port 3000 on your machine to 3000 in the container
+    depends_on:
+      - db # Wait until the `db` service is ready before starting this service
+    environment: # Environment variables accessible inside the Rails container
+      DATABASE_HOST: db # Tells Rails how to find the Postgres container
+      DATABASE_USERNAME: postgres # Matches the db service config
+      DATABASE_PASSWORD: password # Matches the db service config
+      DATABASE_NAME: pizza_place_development # Optional, but aligns with your DB config
+      RAILS_ENV: development # Run Rails in development mode
+
+volumes:
+  db-data: # Named volume to persist Postgres data between runs
